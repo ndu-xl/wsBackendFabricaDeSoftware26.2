@@ -5,3 +5,8 @@ class PilotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Piloto
         fields = '__all__'
+
+class EquipeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Equipe
+        fields = '__all__'

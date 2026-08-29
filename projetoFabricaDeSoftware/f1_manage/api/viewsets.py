@@ -3,5 +3,9 @@ from f1_manage.api import serializers
 from f1_manage import models
 
 class PilotoViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.PilotoSerializer
     queryset = models.Piloto.objects.all()
+    serializer_class = serializers.PilotoSerializer
+
+class EquipeViewSet(viewsets.ModelViewSet):
+    queryset = models.Equipe.objects.all()
+    serializer_class = serializers.EquipeSerializer
