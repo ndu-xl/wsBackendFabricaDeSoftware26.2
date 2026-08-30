@@ -10,7 +10,7 @@ class Equipe(models.Model):
 
 class Piloto(models.Model):
     nome = models.CharField(max_length=100)
-    numero = models.IntegerField()
+    numero = models.PositiveIntegerField()
 
     equipe = models.ForeignKey(
         Equipe,
