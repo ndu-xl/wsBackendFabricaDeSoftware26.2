@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from f1_manage.api import viewsets
 from rest_framework import routers
-
+from f1_manage import views
 
 route = routers.DefaultRouter()
 
@@ -29,4 +29,5 @@ route.register(r'equipe', viewsets.EquipeViewSet, basename="Equipe")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(route.urls)),
+    path("openf1/pilotos/",views.pilotos_openf1)
 ]
