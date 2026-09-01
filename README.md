@@ -97,19 +97,12 @@ pip install -r requirements.txt
 
 **4. Configure o banco de dados MySQL**
 
-O projeto está configurado para usar **MySQL**. Crie um banco chamado `f1_database` e ajuste usuário, senha e host no arquivo `projetoFabricaDeSoftware/projetoFabricaDeSoftware/settings.py`, na seção `DATABASES`, de acordo com o seu ambiente local:
+O projeto está configurado para usar **MySQL**. Crie um banco chamado `f1_database` e ajuste usuário, senha e host no arquivo `projetoFabricaDeSoftware/.env`, e siga o exemplo do `.env.example` , de acordo com o seu ambiente local:
 
 ```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'f1_database',
-        'USER': 'seu_usuario',
-        'PASSWORD': 'sua_senha',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
+SENHA_DB = 'senha'
+HOST_DB = 'host'
+PORT_DB =  'porta'
 ```
 
 **5. Aplique as migrações**
