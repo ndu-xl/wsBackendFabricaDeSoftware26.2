@@ -3,7 +3,11 @@ import requests
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from drf_spectacular.utils import extend_schema
 
+@extend_schema(
+    tags=['OpenF1']
+)
 @api_view(['GET'])
 def pilotos_openf1(request):
     try:

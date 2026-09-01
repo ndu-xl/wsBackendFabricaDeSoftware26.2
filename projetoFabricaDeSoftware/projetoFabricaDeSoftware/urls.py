@@ -19,6 +19,7 @@ from django.urls import path, include
 from f1_manage.api import viewsets
 from rest_framework import routers
 from f1_manage import views
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 route = routers.DefaultRouter()
 
@@ -29,5 +30,7 @@ route.register(r'equipe', viewsets.EquipeViewSet, basename="Equipe")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(route.urls)),
-    path("openf1/pilotos/",views.pilotos_openf1)
+    path("openf1/pilotos/",views.pilotos_openf1),
+    path('api/schema/', SpectacularAPIView.as_view(), name="schema"),
+    path('swagger/',SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui')
 ]
